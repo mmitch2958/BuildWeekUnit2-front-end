@@ -4,6 +4,9 @@ import "./App.css";
 import AddIssue from './Components/AddIssue'
 
 function App() {
+
+	const displayAdd = AddIssue
+
 	return (
 
 		
@@ -13,10 +16,17 @@ function App() {
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>Co-make is your local hub to resolve issues in your community.</p>
 			</header>
+
+			<p>
+			<displayAdd />
+		</p>
+
+
 		</div>
 	
 
 	);
+
 }
 
 export default App;

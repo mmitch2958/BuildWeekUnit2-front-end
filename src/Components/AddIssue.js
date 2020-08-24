@@ -9,11 +9,11 @@ function AddIssue() {
 //Temp Issue Display Function 
 
 
-const Issues = (props) => {
+const Issues = (info) => {
     return (
-      <div className="note-list">
-        {props.issues.map((add) => (
-          <div className="note" key={add.id}>
+      <div className="issue-list">
+        {info.issues.map((add) => (
+          <div className="addIssue" key={add.id}>
             <h2>{add.title}</h2>
                 <p>{add.body}</p>
                 <p>{add.image}</p>
@@ -25,7 +25,7 @@ const Issues = (props) => {
   
 //Add Issue Form 
 
-const AddForm = (props) => {
+const AddForm = (info) => {
   const [add, setAdd] = useState({
     title: '',
       body: '',
@@ -42,7 +42,7 @@ const AddForm = (props) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    props.addNewAdd(add);
+    info.addNewAdd(add);
     setAdd({
       title: '',
       body: '',
