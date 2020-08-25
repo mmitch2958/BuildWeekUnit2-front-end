@@ -9,10 +9,10 @@ function AddIssue() {
 //Temp Issue Display Function 
 
 
-const Issues = (info) => {
+const Issues = (props) => {
     return (
       <div className="issue-list">
-        {info.issues.map((add) => (
+        {props.issues.map((add) => (
           <div className="addIssue" key={add.id}>
             <h2>{add.title}</h2>
                 <p>{add.body}</p>
@@ -25,8 +25,9 @@ const Issues = (info) => {
   
 //Add Issue Form 
 
-const AddForm = (info) => {
+const AddForm = (x) => {
   const [add, setAdd] = useState({
+    id: 1,
     title: '',
       body: '',
     image: ''
@@ -42,14 +43,15 @@ const AddForm = (info) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    info.addNewAdd(add);
+    x.addNewIssue(add);
     setAdd({
+      id: 1,
       title: '',
       body: '',
       image: ''
     });
   };
-
+// INPUT FORM POINTS 
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="title">Title</label>
@@ -117,7 +119,7 @@ const AddForm = (info) => {
         </div>
     )
 
-}
+};
 
 
 export default AddIssue;
